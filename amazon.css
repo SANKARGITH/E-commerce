@@ -9,6 +9,7 @@ body{
     margin-top: -11px;
     position: sticky;
     top: 0px;
+    z-index: 1;
 }
 .first >  ul > li:hover{
     border: 1px solid white;
