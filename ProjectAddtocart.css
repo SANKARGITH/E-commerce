@@ -1,0 +1,428 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+.firstnav{
+	background: black;
+	width: 100%;
+	height: 100%;
+	/*position: sticky;
+	top: 0px;*/
+}
+.firstnav ul{
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.firstnav ul li{
+	font-family: cursive,monospace;
+	font-weight: bold;
+	margin-top: 15px;
+	max-width: max-content;
+	color: white;
+}
+.firstnav ul li:hover,#button2:hover,#button1:hover{
+	cursor: pointer;
+}
+.firstnav ul li a:hover{
+	color: yellow;
+}
+.firstnav ul li a{
+	text-decoration: none;
+	color: white;
+}
+.count{
+	font-family: cursive,monospace;
+	font-weight: bold;
+	font-size: 120%;
+	color: white;
+	margin-right:-110px;
+	margin-top: 30px;
+	z-index: 1;
+}
+/*-----------------------------secondnav --------------------------*/
+.secondnav{
+	width: 100%;
+	height: 100%;
+    background: darkslategray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: whitesmoke;
+    font-family: cursive,monospace;
+	font-weight: bold;
+	cursor: pointer;
+	/*position: sticky;
+	top: 70px;*/
+}
+.secondnav div:hover{
+    color: yellow;
+}
+.secondnav a{
+	color: white;
+	text-decoration: none;
+}
+.secondnav a:hover{
+	color: yellow;
+}
+.secondnav #search-bar{
+	width: 140%;
+	height: 30px;
+	font-weight: bold;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 2px 2px 3px 2px black;
+	text-indent: 11px;
+	text-transform: uppercase;
+
+}
+/*---------------------------------------main display products------------------------*/
+.main{
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	margin: 0px;
+}
+.main .addspage{
+	width: 100%;
+	height: 600px;
+}
+.addspage .addimg img{
+	width: 89.6%;
+	height: 600px;
+	margin-left: 80px;
+}
+.adds{
+	margin:10px 52px;
+}
+.adds img{
+	width: 33%;
+	height: 300px;
+	padding-left:20px;
+}
+/*----------------------------------subnav styles-------------------------*/
+
+.subnav{
+	width: 20%;
+	height: 600px;
+	float: left;
+	display: none;
+	background: dimgrey;
+	overflow-y: scroll;
+}
+.subnav .first-ul{
+	width: 100%;
+	height: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    font-style: cursive;
+}
+.first-ul li{
+	width: 100%;
+	line-height: 40px;
+	list-style-type: none;
+	color: yellow;
+    padding: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+.subnav ul li ul{
+	display: none;
+}
+.subnav ul ul li{
+	color: red;
+	background: lightblue;
+	margin: 5px;
+}
+.about-us{
+	width: 94%;
+    margin: 10px 60px;
+}
+.about-us h4{
+	color: white;
+	background: gray;
+	font-weight: bolder;
+	font-size: 30px;
+	font-family: sans-serif;
+	margin: 5px;
+}
+.about-us h3,h5{
+	color: blue;
+	font-weight: bold;
+	width: max-content;
+	background: yellowgreen;
+	font-size: 25px;
+}
+.about-us p{
+	font-family: cursive,monospace;
+	line-height: 28px;
+}
+.products{
+	width: 100%;
+	height: auto;
+	display: none;
+}
+.products-row{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.product-items{
+	width: 200px;
+	height: 380px;
+	border: 1px solid black;
+	margin: 10px;
+	padding: 20px;
+	box-shadow: 0px 2px 3px 2px black;
+}
+.product-items:hover{
+	box-shadow: 0px 0px 4px 3px yellow;
+}
+.product-items .produtname{
+	color: darkred;
+	font-weight: bold;
+	font-style: monospace;
+}
+.product-items .cartbtn{
+	width: 110px;
+	height: 40px;
+	color: white;
+	background: orangered;
+	font-weight: bolder;
+	font-size: 15px;
+	font-family: monospace;
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0px 0px 2px 1px blue;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.product-items .cartbtn:hover{
+	scale: 1.05;
+	box-shadow: 0px 2px 3px 2px black;
+}
+.wishlistimg:hover{
+	scale: 1.05;
+	cursor: pointer;
+}
+/*-----------------------------------cartpage style sheet---------------*/
+.cartcls{
+	width: 50%;
+	height: 580px;
+	background: lightslategray;
+	margin-right: 50px;
+	box-shadow: 0px 0px 3px 2px green;
+	position: absolute;
+	top: 76px;
+	left: 600px;
+	z-index: 1;
+	display: none;
+}
+.cartcls .carthead{
+    width: 100%;
+    font-weight: bold;
+    font-size: 30px;
+    color: red;
+    background: lightblue;
+    text-align: center;
+    align-items: center;
+}
+.cartcls .cartitems{
+	width: 100%;
+	height: 460px;
+    overflow-y: scroll;
+}
+.cartcls .cartbottom{
+	width: 100%;
+    font-weight: bold;
+    font-size: 25px;
+    color: yellow;
+    margin: 6px;
+    text-align: center;
+}
+.cartbottom .totalamount{
+	color: yellow;
+	font-weight:bolder ;
+}
+.cartcls .cartbottom button{
+	width: 140px;
+	height: 40px;
+	background: green;
+	color: white;
+	font-weight: bolder;
+	font-size: 12px;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0px 0px 2px 2px black;
+	margin: 7px;
+	cursor: pointer;
+}
+.maindiv{
+	width: 100%;
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 5px;
+}
+.maindiv .addcartimg img{
+	width: 100px;
+	height: 100px;
+	vertical-align: middle;
+}
+.maindiv .addname,.addprice,.qtys,.addpriceqty{
+	font-weight: bold;
+	color: white;
+	font-size: 20px;
+}
+.maindiv button{
+	width: 25px;
+	height: 25px;
+	padding: 3px;
+	font-weight: bold;
+	font-size: 15px;
+	margin: 5px;
+	align-items: center;
+}
+.maindiv button:hover{
+	cursor: pointer;
+	box-shadow: 0px 0px 0px 2px red;
+}
+/*------------------------------------profile------------------------*/
+.profiledata{
+	width: 30%;
+	height: auto;
+	background: dimgray;
+	color: white;
+	position: absolute;
+	padding-top:20px;
+	top:118px;
+	left: 770px;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-around;
+	align-items: stretch;
+	box-shadow: 0px 0px 4px 2px white;
+	display: none;
+}
+.profiledata h3{
+	padding: 10px;
+	background: transparent;
+}
+.profiledata span{
+	font-weight: bolder;
+	color: whitesmoke;
+	background: transparent;
+	text-transform: uppercase;
+	font-size: 25px;
+}
+/*---------------------------footerdetails-oo----------------------------*/
+.footerdetails{
+	width: 93%;
+	height: auto;
+	background: lightslategray;
+	margin: 10px 50px;
+	color: white;
+	font-weight: bold;
+}
+.footerdetails table{
+	width: 100%;
+	padding: 15px;
+}
+.footerdetails tr{
+	padding: 10px;
+}
+table img{
+	object-fit: contain;
+}
+/*-----------------------------------Login form styless---------------------------*/
+.formdata{
+	width: 28%;
+	height: 400px;
+    position: absolute;
+    top: 18%;
+    left: 65%;
+/*    border: 1px solid black;*/
+box-shadow: 0px 0px 5px 3px white;
+}
+.formhead{
+	position: relative;
+	top: 10px;
+	left: 0px;
+	font-weight: bolder;
+	font-size: 30px;
+	color: whitesmoke;
+	text-align: center;
+	text-decoration: underline;
+}
+.formdetailsdata{
+	width: 100%;
+	position: absolute;
+	top: 25%;
+	left: 15%;
+}
+.formdetailsdata input{
+	width: 250px;
+	height: 50px;
+	background: transparent;
+	border: none;
+	font-weight: bold;
+	font-size: 15px;
+	color: white;
+	border-bottom: 2px solid white;
+}
+.formdetailsdata input:focus{
+	outline: none;
+}
+.forminput {
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 25px;
+}
+.formlabel,.formlabel1 {
+	font-size: 20px;
+	color: white;
+	position: absolute;
+	top: 20px;
+	left: 5px;
+	transition: all 0.1s ease;
+}
+
+input:focus ~ .formlabel,input:not(:focus):valid ~ .formlabel {
+	top: -15px;
+	bottom: 0px;
+	left: 0px;
+	font-size: 20px;
+	opacity: 1.6;
+	color: white;
+}
+.formdetailsdata button{
+	width: 100px;
+	height: auto;
+	font-weight: bolder;
+	font-size: 20px;
+	margin-top: 10px;
+	text-align: center;
+	color: white;
+	background: transparent;
+	box-shadow: 0px 0px 2px 2px white;
+}
+.formdata .signup{
+	position: absolute;
+	top: 90%;
+	left: 20%;
+	color: white;
+}
+.signup span{
+	color: white;
+	text-decoration: underline;
+     cursor: pointer;
+}
+#login{
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}	
