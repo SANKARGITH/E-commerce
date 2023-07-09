@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login: Freshmart</title>
+	<link rel="stylesheet" type="text/css" href="ProjectAddtocart.css">
+	    <style>
+        .formsign{
+            width: 29%;
+            height: 500px;
+            position: relative;
+            top: 30%;
+            left: 30%;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: none;
+            color: white;
+            box-shadow: 0px 0px 5px 2px white;
+        }
+        table,td,tr{
+            padding: 10px;
+            margin-top: -120px;
+            color: whitesmoke;
+        }
+        .formsign input{
+            height: 30px;
+            border: none;
+            border-bottom: 2px solid white;
+        } 
+        h4{
+            margin-bottom: -50px;
+            text-align: center;
+            color: whitesmoke;
+        }
+        #Captcha{
+            width: 120px;
+            height: 40px;
+            font-size: 30px;
+        }
+        #refresh{
+            width: 60px;
+            height: 30px;
+            /* font-size: 30px; */
+        }
+    </style>
+</head>
+<body style="background: url('https://img.freepik.com/free-photo/raw-chicken-fillet-with-garlic-pepper-rosemary-wooden-chopping-board_1150-37785.jpg?w=740&t=st=1688795555~exp=1688796155~hmac=2fb3f4e677af3743ab01713db8607bbfa152f7b4a0d5ba8f7fd7ea6ddf5da2c8');background-attachment: fixed;background-size: 100% 100%; background-repeat: no-repeat;background-blend-mode: lighten;background-clip: content-box;">
+<div class="formdata">
+	<div class="formdetails">
+		<div class="formhead">
+			<h3>Welcome to FreshMart</h3>
+		</div>
+		<div class="formdetailsdata">
+		<form action="ProjectAddtoCart.html" target="_parent">
+			<div class="formdatadiv">
+			<div class="forminput">
+			<input type="text" id="username" class="Username" autocomplete="off" autofocus required />
+				<label class="formlabel">Username</label>
+			</div>
+		
+			<div class="forminput">
+			<input type="password" id="password" class="Password" autocomplete="off" required />
+			<label class="formlabel1" style="margin-left: 250px;margin-top: -10px;"><img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/hide-5667437-4727868.png?f=avif&w=256" width="50px" height="50px" class="pswordimg"></label>
+			<label class="formlabel">Password</label>
+			</div>
+	        </div>
+			<button>Login</button>
+		</form>
+	</div>
+	</div>
+	    <div class="formsign">
+        <table><form action="" name="form1"><tr><h4>User's Sign in Form</h4>
+                <td><label for="">Enter FirstName:</label></td>
+                <td><input type="text" name="first" onkeyup="First()" ></td></tr><br><br>
+                <tr><td><label>Enter LastName:</label></td>
+                <td><input type=" text" name="last" onkeyup="Last()"></td></tr><br><br>
+                <tr><td><label for="">password:</label></td>
+                <td><input type="password" name="psword" id="password" class="Password"></td>
+                <td><img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/hide-5667437-4727868.png?f=avif&w=256" width="50px" height="50px" class="pswordimg"></td></tr><br><br>
+                <tr><td><label for="">Pancard Number:</label></td>
+                <td><input type="text" name="pan" onkeyup="Pan()"></td></tr><br><br>
+                <tr><td><label for="">Enter captcha:</label></td>
+                <td><input type="text" name="captcha"><span id="text"></span><br>
+                 <input type="text" name="Captcha" id="Captcha" disabled>
+                 <td><input type="button" value="refresh" onclick="capt()" id="refresh"></td></td></tr><br><br>
+                <tr><td colspan="3"><input type="submit" value="submit" onclick=" return verify()" style="width: 60px; height: 30px;text-align: center;"></td></tr>
+                <tr><div class="signup">
+		<h4>Log-in to your account <a id="login" href="Freshmart.html">Log-in</a></h4>
+	</div></tr>
+        </form></table>
+    </div>
+	<div class="signup">
+		<h4>Create New Account with <span id="signpage">SIGN UP</span></h4>
+	</div>
+</div>
+<script type="text/javascript">
+var formdisplay = document.querySelector('.formdata')
+var signupbtndisplay = document.querySelector('.formsign')
+var signupbtn = document.querySelector('#signpage')
+signupbtn.addEventListener('click',()=>{
+	formdisplay.style.height ="500px"
+    formdisplay.innerHTML = signupbtndisplay.innerHTML
+})
+var pswordi = document.querySelector('.pswordimg')
+var pword = document.querySelectorAll('.Password')
+pword.forEach(pword=>{
+pswordi.addEventListener('click',()=>{
+    if(pword.type == "password"){
+        pword.type ="text"
+        pswordi.src ="https://cdn.iconscout.com/icon/premium/png-512-thumb/view-8676624-7143699.png?f=avif&w=256"
+    }else{
+        pword.type = "password"
+        pswordi.src = "https://cdn.iconscout.com/icon/premium/png-512-thumb/hide-5667437-4727868.png?f=avif&w=256"
+    }
+})
+})
+
+</script>
+</body>
+</html>
