@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body{
+            background-image: linear-gradient(black,rgb(46, 46, 46),rgb(17, 17, 17));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: contain;
+            background-position-y: none ;
+        }
+        .Body{
+            width: 290px;
+            height: 400px;
+            position: relative;
+            top: 90px;
+            left: 35%;
+            border: 1px solid white;
+            border-radius: 10px;
+            box-shadow: 0px 2px 2px 0px white;
+        }
+         .display #screen,#screen1{
+            width: 93%;
+            height: 70px;
+            margin: 9px 0px 0px 9px;
+            background: rgb(105, 105, 105);
+            border: 1px solid rgb(141, 136, 136);
+            /* border-radius: 10px; */
+            box-shadow: 0px 1px 3px 0px white;
+            font-size: x-large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bolder;
+            color: rgb(252, 245, 245);
+            text-align: right;
+            margin-right: 5px;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+         .display #screen1{
+            margin-top: -30px;
+            position: relative;
+            z-index: -1;
+         }
+         .display #screen{
+            border-bottom: none;
+            box-shadow: none;
+            border-radius: none;
+         }
+        .display input{
+            width: 93%;
+            height: auto;
+            position: relative;
+        }
+        .buttons{
+            margin: 11px;
+            width: 110%;
+            height: 90%;
+        }
+        .buttons input{
+            width: 15%;
+            height: 10%;
+            padding: 6px;
+            margin: 8px;
+            text-align: center;
+            background-color: rgb(41, 40, 40);
+            border: 1px solid rgb(141, 136, 136);
+            border-radius: 10px;
+            box-shadow: 0px 1px 2px 0px rgb(110, 109, 109);
+            color: white;
+            font-size: large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bolder;
+        }
+        .buttons input:hover{
+            background: lightgreen;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="Body">
+        <div class="display">
+            <input type="text" id="screen" class="disp">
+             <!-- <p id="screen1"></p> -->
+        </div>
+        <div class="display">
+            <input type="text" id="screen1" class="disp">
+             <!-- <p id="screen1"></p> -->
+        </div>
+        <div class="buttons">
+             <input type="button" value="AC" id="ac">
+             <input type="button" value="⬅" id="clear">
+             <input type="button" value="%" class="btn">
+             <input type="button" value="/" class="btn">
+             <input type="button" value="9" class="btn">
+             <input type="button" value="8" class="btn">
+             <input type="button" value="7" class="btn">
+             <input type="button" value="*" class="btn">
+             <input type="button" value="6" class="btn">
+             <input type="button" value="5" class="btn">
+             <input type="button" value="4" class="btn">
+             <input type="button" value="-" class="btn">
+             <input type="button" value="3" class="btn">
+             <input type="button" value="2" class="btn">
+             <input type="button" value="1" class="btn">
+             <input type="button" value="+" class="btn">
+             <input type="button" value="00" class="btn">
+             <input type="button" value="0" class="btn">
+             <input type="button" value="." class="btn">
+             <input type="button" value="=" class="btn1" id="result">
+        </div>
+    </div>
+    <script>
+         var a = document.querySelectorAll(".btn")
+          a.forEach(a=>{
+            a.addEventListener("click",()=>{
+                document.getElementById('screen').value+= a.value
+            })
+             })
+         var r = document.querySelector('.btn1')
+         const b = document.getElementById('screen')
+          r.addEventListener("click",()=>{
+              document.getElementById('screen').value = eval(b.value)
+             })
+        var acs = document.getElementById('ac')
+             acs.addEventListener("click",()=>{
+                 document.getElementById('screen').value =""
+                 document.getElementById('screen1').value =""
+             })
+        var so = document.getElementById('clear')
+             so.addEventListener("click",()=>{
+                var c = document.getElementById('screen').value
+                var d = c.substr(0,c.length-1)
+                document.getElementById('screen').value = d
+             })
+          var sc = document.querySelectorAll('.btn')
+          sc.forEach(sc=>{
+          sc.addEventListener("click",()=>{
+           var re = document.getElementById('screen').value
+           var rm = document.getElementById('screen1')
+           rm.style.fontFamily ="monospace"
+           rm.style.textShadow =" 2px 2px 4px yellow"
+           var re2 = eval(re)
+           rm.value = re2
+          })
+        })
+        var so1 = document.getElementById('clear')
+             so1.addEventListener("click",()=>{
+                var c1 = document.getElementById('screen').value
+                var d1 = c1.substr(0,c1.length-1)
+                var re3 = ""
+                if(d1 ==""){
+                    document.getElementById('screen1').value = ""
+                }else{
+                    re3 =eval(d1)
+                }
+                 document.getElementById('screen1').value = re3
+             })
+         
+    </script>
+</body>
+</html>

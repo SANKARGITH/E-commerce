@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            background-image: linear-gradient(black,rgb(46, 46, 46),rgb(17, 17, 17));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: auto;
+        }
+        .Body{
+            width: 350px;
+            height: 440px;
+            position: relative;
+            top: 70px;
+            left: 35%;
+            border: 1px solid white;
+            border-radius: 10px;
+            box-shadow: 0px 2px 2px 0px white;
+        }
+         .display #screen,#screen1{
+            width: 93%;
+            height: 50px;
+            margin: 7px 0px 0px 7px;
+            background: rgb(105, 105, 105);
+            border: 1px solid rgb(141, 136, 136);
+            box-shadow: 0px 1px 3px 0px white;
+            font-size: x-large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bolder;
+            color: rgb(252, 245, 245);
+            text-align: right;
+            margin-right: 5px;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        .display #screen{
+            border-radius: 10px 10px 0px 0px;
+            margin-bottom: 0px;
+            box-shadow: none;
+            position: relative;
+            z-index: 1;
+            border-bottom: none;
+        }
+        .display #screen1{
+            box-shadow: none;
+            border-radius: 0px 0px 10px 10px;
+            margin-top: -5px;
+        }
+        .display input{
+            width: 93%;
+            height: auto;
+            position: relative;
+        }
+        .buttons{
+            margin-top: 10px;
+        }
+        .buttons input{
+            width: 15%;
+            height: 10%;
+            padding: 7px;
+            margin: 7px;
+            text-align: center;
+            background-color: rgb(41, 40, 40);
+            border: 1px solid rgb(141, 136, 136);
+            border-radius: 10px;
+            box-shadow: 0px 1px 2px 0px rgb(110, 109, 109);
+            color: white;
+            font-size: large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bolder;
+        }
+        .buttons input:hover{
+            background: lightgreen;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="Body">
+        <div class="display">
+            <input type="text" id="screen" disabled>
+         <div>
+            <input type="text" id="screen1" disabled>
+         </div>
+        </div>
+        <div class="buttons">
+            <input type="button" value="sin" class="sin" onclick="sin()">
+            <input type="button" value="cos" class="btn2" onclick="cos()">
+            <input type="button" value="tan" class="btn2" onclick="tan()">
+            <!-- <input type="button" value="rad" class="btn2" style="opacity: 0.2;"> -->
+            <!-- <input type="button" value="deg" class="btn2" style="opacity: 0.2;"> -->
+            <input type="button" value="log" class="btn2" onclick="log()">
+            <!-- <input type="button" value="ln" class="btn2" style="opacity: 0.2;"> -->
+            <input type="button" value="(" class="btn">
+            <input type="button" value=")" class="btn">
+            <!-- <input type="button" value="inv" class="btn2" style="opacity: 0.2;"> -->
+            <!-- <input type="button" value="!" class="btn2" style="opacity: 0.2;"> -->
+            <input type="button" value="AC" id="restart">
+            <input type="button" value="%" class="btn">
+            <input type="button" value="⬅" id="clear">
+            <input type="button" value="/" class="btn">
+            <input type="button" value="^" class="btn2" onclick="expon()" >
+            <input type="button" value="7"  class="btn">
+            <input type="button" value="8" class="btn">
+            <input type="button" value="9" class="btn">
+            <input type="button" value="*" class="btn">
+            <input type="button" value="&radic;" class="btn2" onclick="sqrt()">
+            <input type="button" value="4" class="btn">
+            <input type="button" value="5" class="btn">
+            <input type="button" value="6" class="btn">
+            <input type="button" value="-" class="btn">
+            <input type="button" value="&pi;" class="btn2" onclick="pi()">
+            <input type="button" value="1" class="btn">
+            <input type="button" value="2" class="btn">
+            <input type="button" value="3"  class="btn">
+            <input type="button" value="+" class="btn">
+            <input type="button" value="e" class="btn2" onclick="e()">
+            <input type="button" value="00" class="btn">
+            <input type="button" value="0"  class="btn">
+            <input type="button" value="." class="btn">
+            <input type="button" value="&equals;" id="result"  class="btn1" id="result" style="background: red; color:black;">
+        </div>
+    </div>
+    <script>
+          const btns = document.querySelectorAll(".btn")
+          btns.forEach(btns=>{
+            btns.addEventListener("click",()=>{
+            document.getElementById('screen').value+= btns.value
+            })
+          })
+          var sc = document.querySelectorAll('.btn')
+          sc.forEach(sc=>{
+          sc.addEventListener("click",()=>{
+           var re = document.getElementById('screen').value
+           var rm = document.getElementById('screen1')
+           rm.style.fontFamily ="monospace"
+           rm.style.textShadow =" 2px 2px 4px yellow"
+           var re2 = eval(re)
+           rm.value = re2
+          })
+        })
+          const result = document.querySelector('.btn1')
+          var display_value = document.getElementById('screen')
+          result.addEventListener("click",()=>{
+              document.getElementById('screen').value = eval(display_value.value)
+          })
+    
+          const clear = document.querySelector('#clear')
+          clear.addEventListener("click",()=>{
+            var display_value = document.getElementById('screen').value
+            var substring = display_value.substr(0,display_value.length-1)
+            document.getElementById('screen').value = substring
+          })
+          var so1 = document.getElementById('clear')
+             so1.addEventListener("click",()=>{
+                var c1 = document.getElementById('screen').value
+                var d1 = c1.substr(0,c1.length-1)
+                if(d1 ==""){
+                    document.getElementById('screen1').value = ""
+                }else{
+                    document.getElementById('screen1').value = eval(d1)
+                }
+             })
+
+          const restart = document.querySelector('#restart')
+          restart.addEventListener('click',()=>{
+            document.getElementById('screen').value = ""
+            document.getElementById('screen1').value =""
+          })
+
+         var btns2 = document.querySelector('.sin')
+         var screen = document.getElementById('screen')
+         var screen1 =document.getElementById('screen1')
+         function sin(){
+            screen.value=Math.round(Math.sin(screen.value))
+            screen1.value = "sin" + screen.value
+         }
+         function cos(){
+            screen.value=Math.floor(Math.cos(screen.value))
+            screen1.value = "cos" + screen.value
+         }
+         function tan(){
+            screen.value= Math.floor(Math.tan(screen.value))
+            screen1.value = "tan" + screen.value
+         }
+         function log(){
+            screen.value=Math.round(Math.log(screen.value))
+            screen1.value = "log" + screen.value
+         }
+         function pi(){
+            screen.value= Math.PI
+            screen1.value = "pi" + "(" +screen.value+")"
+         }
+         function expon(){
+            var power = screen.value
+            var ow = screen.value
+            screen.value= Math.pow(power,ow)
+            screen1.value = "power" + "(" +screen.value+")"
+         }
+         function sqrt(){
+            screen.value=Math.sqrt(screen.value)
+            screen1.value = "ROOT" + "(" +screen.value+")"
+         }
+         function e(){
+            screen.value=Math.E
+            screen1.value = "e" + "(" +screen.value+")"
+         }
+
+
+          
+    </script>
+</body>
+</html>
